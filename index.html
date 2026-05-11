@@ -1482,6 +1482,17 @@
 
     <img src="images/bill4.jpg" alt="Bill Cipher" class="hero-img">
 
+    <div id="secretStatusBar" style="
+        font-family: monospace; 
+        font-size: 0.45rem; 
+        color: #1a1a1a; 
+        margin-top: 8px; 
+        letter-spacing: 1px;
+        text-align: center;
+        transition: color 0.5s;
+        cursor: pointer;
+    ">SYS: OK // NODE: 000</div>
+
       <!-- ===== RULES ===== -->
       <div class="section-card card-special-update" data-category="rules">
         <div class="update-left">
@@ -1521,7 +1532,7 @@
     </footer>
   </div>
 
-  <div class="fx-layer" style="
+    <div class="fx-layer" style="
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: 500;
@@ -1532,6 +1543,19 @@
       linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.3) 100%);
     mix-blend-mode: overlay;
   "></div>
+
+  <!-- СЕКРЕТНАЯ ЗВЕЗДОЧКА (ТРИГГЕР КВЕСТА) -->
+  <div id="secretQuestTrigger" style="
+      text-align: right; 
+      margin-top: -10px; 
+      padding-right: 10px; 
+      cursor: pointer; 
+      opacity: 0.3;
+      transition: 0.3s;
+      user-select: none;
+      font-size: 1.5rem;
+  " title="...">*</div>
+
 
   <script>
     (function() {
@@ -1883,6 +1907,135 @@
         });
       }
     })();
+    
+     
+      const trigger = document.getElementById('secretQuestTrigger');
+      const statusBar = document.getElementById('secretStatusBar');
+      let questActive = false;
+      let finalRevealed = false;
+
+      // Финальный текст (немного отредактировал, чтобы влезал органично)
+      const finalText = `хех...))) #кукловод #людипешки #хех... #убийца #манипулятор #выжалкие #манипуляция #жестокая #тихоня #интересы #убийца #хех #скрытаянонедобитая #ауф #держувстрахе #королева #богиня #красныйфлаг #бойтесь #выглупые #марионетки #вымоипешки #жалкиепешки #глупыемарионетки #дазайкинни #мненуженпсихолог #слушайсяменя #бойтесь #лучшая #antahable #дазайлучший #дазайтопотец #яубила18человекбыстроибезсожаления #скрываюэмоции #вырабы #подчиняйтесь #выкринж #манипуляторша #бегите #злая #вытакиесмешные #скобкизакрываютсяскобкизакрываются #убиваюлюдей #пытаю #скобочка #жертвы #приступник #милая #наивные #глупые #могупостоятьзасебя #серыемышки #маньяк #ялучшаядевушка #уваспроблемы #хобби #людименяются #дноклассники #сталкерша #яндере #мояличность #притворяюсь #дьявол #сатана #месть #расправа #сплетни #разрушувашужизнь #уродка #менявселюбят #выникто #самаякрасивая #крашиха #бэдбиач #завидуйтемолчка #королевашколы #выничтожество #никакойпощады #плачь #доведудосамоубийства #несвязывайтесьсомной #непослушныепешки #досталанож #вымненичегонесделаете #криминал #оскорбления #пофигизм #страх #ум #злость #психология #ревнивая #обиженка #собственница #получаювсечтозахочу #рекомендации #обида #нож #доверчивыепешки #лнвльвдвду #могууправлятьвсеми #моислуги #контролируюлюдей #гений #сераятолпа #издеваюсьнадвсеми #хейтеры #страх #пистолет #топор #держувстрахе #паралич #припадки #психичка #тысука #ялегенда #ябудупытатьтебядосмерти #перережугорло #вскробвены #тымой #янастоящийгуль #выфейки #канеки #тетрадьсмерти #смертныеуроды #уведутвоегопарнябудтоявоенкомат #выбудетемерты #танцуюнатвоеймогиле #тытруп #богатая #фенибут #наглаталасьтаблеток #вытакиеклоуны #хахахаясмеюсьсвас #нервы #нервныйсрыв #слушайтесьменя #тиран #терарист #грубая #никогонеуважаю #ярость #причиняюболь #пылаюгневом #бешенство #суровоя #холодная #терпениелопнуло #безумие #пощечина #перегнулипалку #яростнаясука #унижения #достоинство #вытерпилы #выпосмешище #враги #драка #забивы #война #смерть #дикая #артист #боты #можнопрочитатьтебякаккнижку #кукольник #правокатор #испугала #факъю #ад #ямогучая #бегите #вытрусы #жадина #ягрубая #ложь #дерзкая #заяизрая #горе #обман #скам #бу #повесилась #героин #никотиноваязависимость #сталалучше #пристрелись #достаюревольер #черт #член #дазайлучший #ненавижувас #уменявсехорошо #покинулачат #бросаю #одиночество #грусть #отвратительно #норм #лезвие #пуля #япотерялачувства #недоступная #пустотавнутри #этоконец #вычмо #бью #депрессия #влюбилавсебявсюшколу #результатыманипуляций #сигареты #вызаебалименя #прыгайсмоста #отрежутебеконечности #разобьютебесердце #живойтруп #бесконечность #интроверт #двадцатьдватридцатьодин #тымогила #гробы #похоронюзаживо #смирись #тымоясобака #яумнеетебя #ялучшетебя #тыпаскуда #гнида #вылохушки #стерва #гучифлипфлап #идиот #кретин #пошелнах #яблююотвас #целуйтемнепятки #любитеменяжалкиепешки #выуроды #вытвари #выочкуны #ненавижувасхейтеры #психологическийтрюк #нахожуподходклюдям #убилапервогочеловекавшестьлет #збежаластюрьмытрираза #мамабоитсяменя #учителямоипешки #непослушнаяпешка #выблохастыепсы #вашеместоупараши #умритевболоте #канававашдом #хорошаяпешка #преданнаяпешка #пешкиумритетуттолькоальфы #непослушнаяпешка #наказана #лучшийманипулятор #молчать #явашапринцесса #вамповезлосомной #всехотятсомнойдружить #всехотятменяобнять #якотораянелюблюприкосновенияиманипулируюими #выпешкивмоейбольшойигре #большаяигра #уваснетмнения #главнаяжертватихоня #выбезменяникто #таквышло #пощадынебудет #ножужеутвоегогорла #ярастопчутебя #хахахахх #жалкиесущества #букашки #работайтенаменя #ясказалавысделали #никакихпретензий #идинахуйхуесос #довелапсихолога #доведудопсихолога #психушка #психиатр #даятакбогатаияэтонескрываю #вытупозамнойповторяете #доели #ямамми #люблюхорошихпешек #мстительная #япомнювсезлоотвас #пришловремярасправы #бьюпосуду #ссадины #порезы #синяки #гимотомы #петля #отрезалаголовы #готоваидтипоголовам #чикатило #ялюблючикатилоидазая #дочьдазая #помотрошуиброшу #вызависимыотменя #вымямли #крыса #выменянепонимаете #боль #яподругадозая #хех #якуколд #страх`;
+
+      // Этап 1: Нажатие на звездочку
+      if (trigger) {
+        trigger.addEventListener('click', function(e) {
+          if (questActive || finalRevealed) return;
+          
+          questActive = true;
+          this.style.opacity = '1';
+          this.style.color = '#FDE837';
+          this.style.textShadow = '0 0 10px #FDE837';
+          this.textContent = '>>';
+          this.style.marginTop = '5px';
+          this.style.fontSize = '0.8rem';
+          
+          // Активируем статус бар
+          if (statusBar) {
+            statusBar.style.color = '#555';
+            statusBar.textContent = 'SYS: ERR // CORRUPTED // CLICK_TO_RESTORE';
+            statusBar.style.fontWeight = 'bold';
+            statusBar.style.cursor = 'pointer';
+          }
+          
+          // Звук или вибрация (опционально)
+          document.body.style.transition = '0.1s';
+          document.body.style.transform = 'translateY(-1px)';
+          setTimeout(() => { document.body.style.transform = ''; }, 100);
+        });
+      }
+
+      // Этап 2: Нажатие на строку состояния
+      if (statusBar) {
+        statusBar.addEventListener('click', function(e) {
+          if (!questActive || finalRevealed) return;
+          
+          finalRevealed = true;
+          
+          // Создаем модальное окно в стиле сайта
+          const overlay = document.createElement('div');
+          overlay.style.cssText = `
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); z-index: 9999;
+            display: flex; align-items: center; justify-content: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.5s;
+          `;
+          
+          const box = document.createElement('div');
+          box.style.cssText = `
+            max-width: 600px; max-height: 80vh; overflow-y: auto; 
+            padding: 20px; margin: 20px;
+            border: 1px solid #FDE837; background: #0a0a0a;
+            color: #FDE837; font-family: 'Courier New', monospace;
+            font-size: 0.7rem; line-height: 1.5; letter-spacing: 1px;
+            text-align: left; box-shadow: 0 0 50px rgba(253,232,55,0.3);
+            position: relative;
+          `;
+          
+          const header = document.createElement('div');
+          header.textContent = '> SYSTEM BREACH // puppet_master.exe';
+          header.style.cssText = 'color: #FEFC6B; margin-bottom: 15px; font-weight: bold;';
+          
+          const text = document.createElement('div');
+          text.style.cssText = 'word-break: break-word;';
+          
+          // Эффект печатной машинки
+          let i = 0;
+          const speed = 10; // Скорость печати
+          function typeWriter() {
+            if (i < finalText.length) {
+              text.textContent += finalText.charAt(i);
+              i++;
+              box.scrollTop = box.scrollHeight; // Автоскролл
+              setTimeout(typeWriter, speed);
+            }
+          }
+          
+          const closeBtn = document.createElement('div');
+          closeBtn.textContent = '[X] ЗАКРЫТЬ';
+          closeBtn.style.cssText = `
+            text-align: right; margin-top: 20px; cursor: pointer;
+            color: #666; transition: 0.3s; font-weight: bold;
+          `;
+          closeBtn.addEventListener('mouseenter', () => closeBtn.style.color = '#FDE837');
+          closeBtn.addEventListener('mouseleave', () => closeBtn.style.color = '#666');
+          closeBtn.addEventListener('click', () => overlay.remove());
+          
+          box.appendChild(header);
+          box.appendChild(text);
+          box.appendChild(closeBtn);
+          overlay.appendChild(box);
+          document.body.appendChild(overlay);
+          
+          // Запускаем печать
+          typeWriter();
+          
+          // Меняем статус бар обратно
+          statusBar.textContent = 'SYS: BREACHED // NODE: 666';
+          statusBar.style.color = '#FDE837';
+          statusBar.style.textShadow = '0 0 10px #FDE837';
+          
+          // Прячем первую кнопку
+          if (trigger) {
+            trigger.textContent = '*';
+            trigger.style.opacity = '0.1';
+            trigger.style.cursor = 'default';
+            trigger.style.pointerEvents = 'none';
+          }
+        });
+      }
+
+      // Добавляем стиль для анимации появления
+      const styleSheet = document.createElement("style");
+      styleSheet.textContent = `
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `;
+      document.head.appendChild(styleSheet);
+    
   </script>
 </body>
 </html>
