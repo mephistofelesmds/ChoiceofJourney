@@ -6,7 +6,6 @@
   <title>Info · Choice of Journey</title>
 
 <style>
-    /* --- ПОДКЛЮЧЕНИЕ ШРИФТОВ --- */
     @font-face {
       font-family: 'DreamScar';
       src: url('fonts/Lighthaus.ttf') format('truetype');
@@ -51,7 +50,6 @@
       text-shadow: 0 0 15px #FDE837;
     }
 
-    /* --- СЛОЙ ШУМА --- */
     .noise-overlay {
       position: fixed;
       top: 0;
@@ -73,7 +71,6 @@
       100% { transform: translate(0, 0); }
     }
 
-    /* --- ФОН --- */
     .bg-glow {
       position: fixed;
       width: 600px;
@@ -94,7 +91,6 @@
       left: -150px;
     }
 
-    /* --- КОНТЕЙНЕР --- */
     .container {
       position: relative;
       z-index: 2;
@@ -104,7 +100,6 @@
       padding: 40px 20px;
     }
 
-    /* --- ЗАГОЛОВОК --- */
     .header-section {
       text-align: center;
       padding: 30px 0 20px;
@@ -144,7 +139,6 @@
       text-shadow: 0 0 12px #FDE837;
     }
 
-    /* --- ГЛАЗА --- */
     .eye-container {
       position: relative;
       display: inline-block;
@@ -221,7 +215,6 @@
       border-width: 3px;
     }
 
-    /* Позиционирование глаз */
     .eye-header {
       position: absolute;
       top: -20px;
@@ -284,7 +277,6 @@
       95% { transform: scaleY(0.1); }
     }
 
-    /* --- КАРТИНКА БИЛЛА --- */
     .hero-img {
       width: 100%;
       max-width: 100%;
@@ -296,7 +288,6 @@
       transition: transform 0.4s ease;
     }
 
-    /* --- СЕТКА КАРТОЧЕК --- */
     .cards-grid {
       display: flex;
       flex-direction: column;
@@ -304,7 +295,6 @@
       min-height: 300px;
     }
 
-    /* Все остальные стили карточек оставляем без изменений */
     .section-card {
       background: rgba(20, 20, 20, 0.6);
       backdrop-filter: blur(5px);
@@ -339,7 +329,6 @@
       box-shadow: 0 0 12px #FDE837;
     }
 
-    /* INFO карточка */
     .card-star-light {
       background: #0a0a0a;
       border: 2px solid #FDE837;
@@ -410,7 +399,6 @@
       opacity: 0.4;
     }
 
-    /* CRITERIA карточка */
     .card-edition-create {
       background: #0a0a0a;
       border: 1px solid #333;
@@ -606,7 +594,6 @@
       animation: waveMove 4s ease-in-out infinite;
     }
 
-    /* CONTACTS карточка */
     .card-user-interface {
       background: #0a0a0a;
       border: 1px solid #333;
@@ -835,7 +822,6 @@
     .ui-dot:nth-child(3) { top: 60%; left: 5%; }
     .ui-dot:nth-child(4) { bottom: 15%; right: 15%; }
 
-    /* RULES карточка */
     .card-special-update {
       background: #0a0a0a;
       border: 1px solid #333;
@@ -1082,7 +1068,6 @@
       75% { transform: translateX(5px) rotate(1deg); }
     }
 
-    /* --- АНИМАЦИИ --- */
     @keyframes fadeInDown {
       0% { opacity: 0; transform: translateY(-20px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -1098,7 +1083,6 @@
       100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    /* --- АДАПТИВ --- */
     @media (max-width: 700px) {
       .main-title {
         font-size: 2.8rem;
@@ -1132,7 +1116,6 @@
 </head>
 <body>
 
-  <!-- ЭФФЕКТ: ПАУТИНКА + ЧЁРНЫЙ ДЫМ -->
   <div class="fx-web" style="
     position: fixed;
     top: 0; left: 0;
@@ -1198,7 +1181,6 @@
     }
   </style>
 
-  <!-- Плавающие глаза на фоне -->
   <div class="eye-floating eye-floating-1">
     <div class="eye-box small floating-eye" data-eye="floating1">
       <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 80 60">
@@ -1259,15 +1241,12 @@
     </div>
   </div>
 
-  <!-- Шум и свечения -->
   <div class="noise-overlay"></div>
   <div class="bg-glow bg-glow-1"></div>
   <div class="bg-glow bg-glow-2"></div>
 
   <div class="container">
-    <!-- ЗАГОЛОВОК С ГЛАЗОМ -->
     <div class="header-section">
-      <!-- Глаз в заголовке -->
       <div class="eye-container eye-header">
         <div class="eye-box header-eye" data-eye="header">
           <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 120 88">
@@ -1305,9 +1284,7 @@
       </a>
     </div>
 
-    <!-- БИЛЛ ШИФР С ГЛАЗОМ -->
     <div style="position: relative;">
-      <!-- Глаз слева от Билла -->
       <div class="eye-container eye-bill">
         <div class="eye-box bill-eye" data-eye="bill">
           <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 120 88">
@@ -1340,15 +1317,9 @@
       <img src="images/Bill.png" alt="Bill Cipher" class="hero-img">
     </div>
 
-    <!-- Пара глаз между секциями -->
-    
-
-    <!-- КАРТОЧКИ -->
     <div class="cards-grid" id="cardsGrid">
 
-      <!-- ===== INFO ===== -->
       <div class="section-card card-star-light" data-category="info" style="position: relative;">
-        <!-- Глаз в левом верхнем углу карточки -->
         <div class="eye-container eye-card-left">
           <div class="eye-box small card-eye" data-eye="infoCard">
             <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 80 60">
@@ -1391,9 +1362,7 @@
 
     <img src="images/bill2.jpg" alt="Bill Cipher" class="hero-img">
 
-      <!-- ===== CRITERIA ===== -->
       <div class="section-card card-edition-create" data-category="criteria" style="position: relative;">
-        <!-- Глаз в правом нижнем углу -->
         <div class="eye-container eye-card-right">
           <div class="eye-box small card-eye" data-eye="criteriaCard">
             <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 80 60">
@@ -1451,7 +1420,6 @@
 
     <img src="images/bill3.jpg" alt="Bill Cipher" class="hero-img">
 
-      <!-- ===== CONTACTS ===== -->
       <div class="section-card card-user-interface" data-category="contacts">
         <div class="ui-dot"></div>
         <div class="ui-dot"></div>
@@ -1493,7 +1461,6 @@
         cursor: pointer;
     ">SYS: OK // NODE: 000</div>
 
-      <!-- ===== RULES ===== -->
       <div class="section-card card-special-update" data-category="rules">
         <div class="update-left">
           <div class="pixel-icon">G</div>
@@ -1507,7 +1474,7 @@
             <span class="pixel-btn">Разрыв</span>
             <span class="pixel-btn">Неактив 14 дней</span>
           </div>
-          <div class="tiny-label bottom">Набор закрыт</div>
+          <div class="tiny-label bottom">Набор открыт</div>
         </div>
         <div class="update-right">
           <div class="update-tag" id="updateTag">Правила</div>
@@ -1544,7 +1511,6 @@
     mix-blend-mode: overlay;
   "></div>
 
-  <!-- СЕКРЕТНАЯ ЗВЕЗДОЧКА (ТРИГГЕР КВЕСТА) -->
   <div id="secretQuestTrigger" style="
       text-align: right; 
       margin-top: -10px; 
@@ -1559,7 +1525,6 @@
 
   <script>
     (function() {
-      // ---------- АНИМАЦИЯ ВСЕХ ГЛАЗ ----------
       function initEye(eyeBox, pupil) {
         if (!eyeBox || !pupil) return;
 
@@ -1598,7 +1563,6 @@
         });
       }
 
-      // Инициализируем все глаза
       const eyeBoxes = document.querySelectorAll('.eye-box');
       eyeBoxes.forEach(eyeBox => {
         const pupil = eyeBox.querySelector('.pupil');
@@ -1607,7 +1571,6 @@
         }
       });
 
-      // ---------- НАВИГАЦИЯ ----------
       const navButtons = document.querySelectorAll('.nav-btn');
       if (navButtons.length) {
         const cardsGrid = document.getElementById('cardsGrid');
@@ -1627,7 +1590,6 @@
         });
       }
 
-      // ---------- EDITION CREATE ----------
       const cardEdition = document.querySelector('.card-edition-create');
       if (cardEdition) {
         const wave = cardEdition.querySelector('#editionWave');
@@ -1710,7 +1672,6 @@
         });
       }
 
-      // ---------- USER INTERFACE ----------
       const cardUser = document.querySelector('.card-user-interface');
       if (cardUser) {
         const screen = cardUser.querySelector('#uiScreen');
@@ -1797,7 +1758,6 @@
         setInterval(updateTime, 30000);
       }
 
-      // ---------- SPECIAL UPDATE ----------
       const cardSpecial = document.querySelector('.card-special-update');
       if (cardSpecial) {
         const bubble = cardSpecial.querySelector('#specialBubble');
@@ -1914,10 +1874,8 @@
       let questActive = false;
       let finalRevealed = false;
 
-      // Финальный текст (немного отредактировал, чтобы влезал органично)
       const finalText = `хех...))) #кукловод #людипешки #хех... #убийца #манипулятор #выжалкие #манипуляция #жестокая #тихоня #интересы #убийца #хех #скрытаянонедобитая #ауф #держувстрахе #королева #богиня #красныйфлаг #бойтесь #выглупые #марионетки #вымоипешки #жалкиепешки #глупыемарионетки #дазайкинни #мненуженпсихолог #слушайсяменя #бойтесь #лучшая #antahable #дазайлучший #дазайтопотец #яубила18человекбыстроибезсожаления #скрываюэмоции #вырабы #подчиняйтесь #выкринж #манипуляторша #бегите #злая #вытакиесмешные #скобкизакрываютсяскобкизакрываются #убиваюлюдей #пытаю #скобочка #жертвы #приступник #милая #наивные #глупые #могупостоятьзасебя #серыемышки #маньяк #ялучшаядевушка #уваспроблемы #хобби #людименяются #дноклассники #сталкерша #яндере #мояличность #притворяюсь #дьявол #сатана #месть #расправа #сплетни #разрушувашужизнь #уродка #менявселюбят #выникто #самаякрасивая #крашиха #бэдбиач #завидуйтемолчка #королевашколы #выничтожество #никакойпощады #плачь #доведудосамоубийства #несвязывайтесьсомной #непослушныепешки #досталанож #вымненичегонесделаете #криминал #оскорбления #пофигизм #страх #ум #злость #психология #ревнивая #обиженка #собственница #получаювсечтозахочу #рекомендации #обида #нож #доверчивыепешки #лнвльвдвду #могууправлятьвсеми #моислуги #контролируюлюдей #гений #сераятолпа #издеваюсьнадвсеми #хейтеры #страх #пистолет #топор #держувстрахе #паралич #припадки #психичка #тысука #ялегенда #ябудупытатьтебядосмерти #перережугорло #вскробвены #тымой #янастоящийгуль #выфейки #канеки #тетрадьсмерти #смертныеуроды #уведутвоегопарнябудтоявоенкомат #выбудетемерты #танцуюнатвоеймогиле #тытруп #богатая #фенибут #наглаталасьтаблеток #вытакиеклоуны #хахахаясмеюсьсвас #нервы #нервныйсрыв #слушайтесьменя #тиран #терарист #грубая #никогонеуважаю #ярость #причиняюболь #пылаюгневом #бешенство #суровоя #холодная #терпениелопнуло #безумие #пощечина #перегнулипалку #яростнаясука #унижения #достоинство #вытерпилы #выпосмешище #враги #драка #забивы #война #смерть #дикая #артист #боты #можнопрочитатьтебякаккнижку #кукольник #правокатор #испугала #факъю #ад #ямогучая #бегите #вытрусы #жадина #ягрубая #ложь #дерзкая #заяизрая #горе #обман #скам #бу #повесилась #героин #никотиноваязависимость #сталалучше #пристрелись #достаюревольер #черт #член #дазайлучший #ненавижувас #уменявсехорошо #покинулачат #бросаю #одиночество #грусть #отвратительно #норм #лезвие #пуля #япотерялачувства #недоступная #пустотавнутри #этоконец #вычмо #бью #депрессия #влюбилавсебявсюшколу #результатыманипуляций #сигареты #вызаебалименя #прыгайсмоста #отрежутебеконечности #разобьютебесердце #живойтруп #бесконечность #интроверт #двадцатьдватридцатьодин #тымогила #гробы #похоронюзаживо #смирись #тымоясобака #яумнеетебя #ялучшетебя #тыпаскуда #гнида #вылохушки #стерва #гучифлипфлап #идиот #кретин #пошелнах #яблююотвас #целуйтемнепятки #любитеменяжалкиепешки #выуроды #вытвари #выочкуны #ненавижувасхейтеры #психологическийтрюк #нахожуподходклюдям #убилапервогочеловекавшестьлет #збежаластюрьмытрираза #мамабоитсяменя #учителямоипешки #непослушнаяпешка #выблохастыепсы #вашеместоупараши #умритевболоте #канававашдом #хорошаяпешка #преданнаяпешка #пешкиумритетуттолькоальфы #непослушнаяпешка #наказана #лучшийманипулятор #молчать #явашапринцесса #вамповезлосомной #всехотятсомнойдружить #всехотятменяобнять #якотораянелюблюприкосновенияиманипулируюими #выпешкивмоейбольшойигре #большаяигра #уваснетмнения #главнаяжертватихоня #выбезменяникто #таквышло #пощадынебудет #ножужеутвоегогорла #ярастопчутебя #хахахахх #жалкиесущества #букашки #работайтенаменя #ясказалавысделали #никакихпретензий #идинахуйхуесос #довелапсихолога #доведудопсихолога #психушка #психиатр #даятакбогатаияэтонескрываю #вытупозамнойповторяете #доели #ямамми #люблюхорошихпешек #мстительная #япомнювсезлоотвас #пришловремярасправы #бьюпосуду #ссадины #порезы #синяки #гимотомы #петля #отрезалаголовы #готоваидтипоголовам #чикатило #ялюблючикатилоидазая #дочьдазая #помотрошуиброшу #вызависимыотменя #вымямли #крыса #выменянепонимаете #боль #яподругадозая #хех #якуколд #страх`;
 
-      // Этап 1: Нажатие на звездочку
       if (trigger) {
         trigger.addEventListener('click', function(e) {
           if (questActive || finalRevealed) return;
@@ -1930,7 +1888,6 @@
           this.style.marginTop = '5px';
           this.style.fontSize = '0.8rem';
           
-          // Активируем статус бар
           if (statusBar) {
             statusBar.style.color = '#555';
             statusBar.textContent = 'SYS: ERR // CORRUPTED // CLICK_TO_RESTORE';
@@ -1938,21 +1895,18 @@
             statusBar.style.cursor = 'pointer';
           }
           
-          // Звук или вибрация (опционально)
           document.body.style.transition = '0.1s';
           document.body.style.transform = 'translateY(-1px)';
           setTimeout(() => { document.body.style.transform = ''; }, 100);
         });
       }
 
-      // Этап 2: Нажатие на строку состояния
       if (statusBar) {
         statusBar.addEventListener('click', function(e) {
           if (!questActive || finalRevealed) return;
           
           finalRevealed = true;
           
-          // Создаем модальное окно в стиле сайта
           const overlay = document.createElement('div');
           overlay.style.cssText = `
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -1980,14 +1934,13 @@
           const text = document.createElement('div');
           text.style.cssText = 'word-break: break-word;';
           
-          // Эффект печатной машинки
           let i = 0;
-          const speed = 10; // Скорость печати
+          const speed = 10;
           function typeWriter() {
             if (i < finalText.length) {
               text.textContent += finalText.charAt(i);
               i++;
-              box.scrollTop = box.scrollHeight; // Автоскролл
+              box.scrollTop = box.scrollHeight;
               setTimeout(typeWriter, speed);
             }
           }
@@ -2008,15 +1961,12 @@
           overlay.appendChild(box);
           document.body.appendChild(overlay);
           
-          // Запускаем печать
           typeWriter();
           
-          // Меняем статус бар обратно
           statusBar.textContent = 'SYS: BREACHED // NODE: 666';
           statusBar.style.color = '#FDE837';
           statusBar.style.textShadow = '0 0 10px #FDE837';
           
-          // Прячем первую кнопку
           if (trigger) {
             trigger.textContent = '*';
             trigger.style.opacity = '0.1';
@@ -2026,7 +1976,6 @@
         });
       }
 
-      // Добавляем стиль для анимации появления
       const styleSheet = document.createElement("style");
       styleSheet.textContent = `
         @keyframes fadeIn {
