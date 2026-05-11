@@ -1088,28 +1088,99 @@
         font-size: 2.8rem;
         letter-spacing: 2px;
       }
+      
       .section-card {
         padding: 20px;
       }
+      
       .card-special-update {
         flex-direction: column;
         padding: 15px;
       }
+      
       .update-left,
       .update-right {
         min-height: 180px;
       }
+      
       .big-word {
         font-size: 2rem;
       }
+      
       .pixel-text {
         font-size: 1.6rem;
       }
-      .eye-floating {
-        display: none;
+
+      .eye-box:not(.small):not(.large) {
+        width: 80px;
+        height: 60px;
       }
-      .eye-header, .eye-bill, .eye-card-left, .eye-card-right {
-        display: none;
+      
+      .eye-box.small {
+        width: 55px;
+        height: 42px;
+      }
+      
+      .eye-box.large {
+        width: 100px;
+        height: 75px;
+      }
+
+      .eye-box:not(.small):not(.large) .pupil {
+        width: 12px;
+        height: 18px;
+        border-width: 2px;
+      }
+      
+      .eye-box.small .pupil {
+        width: 8px;
+        height: 12px;
+        border-width: 1.5px;
+      }
+
+      .eye-box.large .pupil {
+        width: 14px;
+        height: 20px;
+        border-width: 2px;
+      }
+
+      .eye-header {
+        display: block;
+        top: -25px;
+        right: -10px;
+      }
+
+      .eye-bill {
+        display: block;
+        top: -15px;
+        left: -5px; 
+      }
+
+      .eye-card-left {
+        display: block;
+        top: -20px;
+        left: -5px; 
+      }
+
+      .eye-card-right {
+        display: block;
+        bottom: -20px;
+        right: -5px; 
+      }
+
+  
+      .eye-floating {
+        opacity: 0.4;
+      }
+      
+      .eye-floating-1 {
+        top: 10%;
+        left: 2%;
+      }
+      
+      .eye-floating-2 {
+        bottom: 15%;
+        right: 2%;
       }
     }
   </style>
