@@ -61,7 +61,7 @@
       pointer-events: none;
       z-index: 999;
       opacity: 0.05;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4yIiAvPjwvc3ZnPg==');
+      background-image: url('data:image/фон.png');
       animation: noiseAnim 0.15s infinite;
     }
 
@@ -109,6 +109,7 @@
       text-align: center;
       padding: 30px 0 20px;
       animation: fadeInDown 0.8s ease-out;
+      position: relative;
     }
 
     .main-title {
@@ -143,6 +144,146 @@
       text-shadow: 0 0 12px #FDE837;
     }
 
+    /* --- ГЛАЗА --- */
+    .eye-container {
+      position: relative;
+      display: inline-block;
+      z-index: 3;
+    }
+
+    .eye-box {
+      position: relative;
+      width: 120px;
+      height: 88px;
+      overflow: hidden;
+      animation: blink 5s infinite ease-in-out;
+    }
+
+    .eye-box.small {
+      width: 80px;
+      height: 60px;
+    }
+
+    .eye-box.large {
+      width: 150px;
+      height: 110px;
+    }
+
+    .pupil-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .eye-outline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .eye-outline svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .pupil {
+      position: absolute;
+      background-color: transparent;
+      border: 3px solid #FDE837;
+      border-radius: 50%;
+      width: 16px;
+      height: 22px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s ease-out;
+      z-index: 2;
+    }
+
+    .eye-box.small .pupil {
+      width: 12px;
+      height: 18px;
+      border-width: 2px;
+    }
+
+    .eye-box.large .pupil {
+      width: 20px;
+      height: 28px;
+      border-width: 3px;
+    }
+
+    /* Позиционирование глаз */
+    .eye-header {
+      position: absolute;
+      top: -20px;
+      right: -30px;
+    }
+
+    .eye-bill {
+      position: absolute;
+      top: 10px;
+      left: -40px;
+    }
+
+    .eye-card-left {
+      position: absolute;
+      top: 20px;
+      left: -35px;
+    }
+
+    .eye-card-right {
+      position: absolute;
+      bottom: 15px;
+      right: -30px;
+    }
+
+    .eye-between {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+      opacity: 0.7;
+    }
+
+    .eye-floating {
+      position: fixed;
+      pointer-events: none;
+      z-index: 998;
+    }
+
+    .eye-floating-1 {
+      top: 15%;
+      left: 5%;
+      animation: floatEye 8s ease-in-out infinite;
+    }
+
+    .eye-floating-2 {
+      bottom: 20%;
+      right: 3%;
+      animation: floatEye 12s ease-in-out infinite reverse;
+    }
+
+    @keyframes floatEye {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(10px, -15px) rotate(3deg); }
+      50% { transform: translate(-5px, -25px) rotate(-2deg); }
+      75% { transform: translate(-15px, -10px) rotate(4deg); }
+    }
+
+    @keyframes blink {
+      0%, 90%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+
     /* --- КАРТИНКА БИЛЛА --- */
     .hero-img {
       width: 100%;
@@ -163,7 +304,7 @@
       min-height: 300px;
     }
 
-    /* --- СТИЛИ КАРТОЧЕК (общие + специфичные) --- */
+    /* Все остальные стили карточек оставляем без изменений */
     .section-card {
       background: rgba(20, 20, 20, 0.6);
       backdrop-filter: blur(5px);
@@ -198,7 +339,7 @@
       box-shadow: 0 0 12px #FDE837;
     }
 
-    /* INFO карточка (card-star-light) */
+    /* INFO карточка */
     .card-star-light {
       background: #0a0a0a;
       border: 2px solid #FDE837;
@@ -269,7 +410,7 @@
       opacity: 0.4;
     }
 
-    /* CRITERIA карточка (card-edition-create) */
+    /* CRITERIA карточка */
     .card-edition-create {
       background: #0a0a0a;
       border: 1px solid #333;
@@ -465,7 +606,7 @@
       animation: waveMove 4s ease-in-out infinite;
     }
 
-    /* CONTACTS карточка (card-user-interface) */
+    /* CONTACTS карточка */
     .card-user-interface {
       background: #0a0a0a;
       border: 1px solid #333;
@@ -528,7 +669,6 @@
       background-position: center;
       background-repeat: no-repeat;
     }
-
 
     .ui-username {
       font-size: 0.7rem;
@@ -695,7 +835,7 @@
     .ui-dot:nth-child(3) { top: 60%; left: 5%; }
     .ui-dot:nth-child(4) { bottom: 15%; right: 15%; }
 
-    /* RULES карточка (card-special-update) */
+    /* RULES карточка */
     .card-special-update {
       background: #0a0a0a;
       border: 1px solid #333;
@@ -981,6 +1121,12 @@
       .pixel-text {
         font-size: 1.6rem;
       }
+      .eye-floating {
+        display: none;
+      }
+      .eye-header, .eye-bill, .eye-card-left, .eye-card-right {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -1052,14 +1198,105 @@
     }
   </style>
 
+  <!-- Плавающие глаза на фоне -->
+  <div class="eye-floating eye-floating-1">
+    <div class="eye-box small floating-eye" data-eye="floating1">
+      <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 80 60">
+        <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30"
+              fill="#000000"
+              fill-opacity="0" />
+      </svg>
+      <svg class="pupil-mask" viewBox="0 0 80 60">
+        <defs>
+          <clipPath id="eyeClipFloat1">
+            <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30" />
+          </clipPath>
+        </defs>
+        <g clip-path="url(#eyeClipFloat1)"></g>
+      </svg>
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;clip-path: url(#eyeClipFloat1);">
+        <div class="pupil" data-pupil="float1"></div>
+      </div>
+      <div class="eye-outline">
+        <svg viewBox="0 0 80 60">
+          <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30"
+                fill="none"
+                stroke="#FDE837"
+                stroke-width="3"
+                stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="eye-floating eye-floating-2">
+    <div class="eye-box small floating-eye" data-eye="floating2">
+      <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 80 60">
+        <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30"
+              fill="#000000"
+              fill-opacity="0" />
+      </svg>
+      <svg class="pupil-mask" viewBox="0 0 80 60">
+        <defs>
+          <clipPath id="eyeClipFloat2">
+            <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30" />
+          </clipPath>
+        </defs>
+        <g clip-path="url(#eyeClipFloat2)"></g>
+      </svg>
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;clip-path: url(#eyeClipFloat2);">
+        <div class="pupil" data-pupil="float2"></div>
+      </div>
+      <div class="eye-outline">
+        <svg viewBox="0 0 80 60">
+          <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30"
+                fill="none"
+                stroke="#FDE837"
+                stroke-width="3"
+                stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
   <!-- Шум и свечения -->
   <div class="noise-overlay"></div>
   <div class="bg-glow bg-glow-1"></div>
   <div class="bg-glow bg-glow-2"></div>
 
   <div class="container">
-    <!-- ЗАГОЛОВОК -->
+    <!-- ЗАГОЛОВОК С ГЛАЗОМ -->
     <div class="header-section">
+      <!-- Глаз в заголовке -->
+      <div class="eye-container eye-header">
+        <div class="eye-box header-eye" data-eye="header">
+          <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 120 88">
+            <path d="M 8 44 Q 60 8 112 44 Q 60 80 8 44"
+                  fill="#000000"
+                  fill-opacity="0" />
+          </svg>
+          <svg class="pupil-mask" viewBox="0 0 120 88">
+            <defs>
+              <clipPath id="eyeClipHeader">
+                <path d="M 8 44 Q 60 8 112 44 Q 60 80 8 44" />
+              </clipPath>
+            </defs>
+            <g clip-path="url(#eyeClipHeader)"></g>
+          </svg>
+          <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;clip-path: url(#eyeClipHeader);">
+            <div class="pupil" data-pupil="header"></div>
+          </div>
+          <div class="eye-outline">
+            <svg viewBox="0 0 120 88">
+              <path d="M 8 44 Q 60 8 112 44 Q 60 80 8 44"
+                    fill="none"
+                    stroke="#FDE837"
+                    stroke-width="4"
+                    stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
       <div class="main-title">
         INFO <span class="gold">CHOICE OF JOURNEY</span>
       </div>
@@ -1068,14 +1305,79 @@
       </a>
     </div>
 
-    <!-- БИЛЛ ШИФР -->
-    <img src="images/Bill.png" alt="Bill Cipher" class="hero-img">
+    <!-- БИЛЛ ШИФР С ГЛАЗОМ -->
+    <div style="position: relative;">
+      <!-- Глаз слева от Билла -->
+      <div class="eye-container eye-bill">
+        <div class="eye-box bill-eye" data-eye="bill">
+          <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 120 88">
+            <path d="M 8 44 Q 60 8 112 44 Q 60 80 8 44"
+                  fill="#000000"
+                  fill-opacity="0" />
+          </svg>
+          <svg class="pupil-mask" viewBox="0 0 120 88">
+            <defs>
+              <clipPath id="eyeClipBill">
+                <path d="M 8 44 Q 60 8 112 44 Q 60 80 8 44" />
+              </clipPath>
+            </defs>
+            <g clip-path="url(#eyeClipBill)"></g>
+          </svg>
+          <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;clip-path: url(#eyeClipBill);">
+            <div class="pupil" data-pupil="bill"></div>
+          </div>
+          <div class="eye-outline">
+            <svg viewBox="0 0 120 88">
+              <path d="M 8 44 Q 60 8 112 44 Q 60 80 8 44"
+                    fill="none"
+                    stroke="#FDE837"
+                    stroke-width="4"
+                    stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <img src="images/Bill.png" alt="Bill Cipher" class="hero-img">
+    </div>
+
+    <!-- Пара глаз между секциями -->
+    
 
     <!-- КАРТОЧКИ -->
     <div class="cards-grid" id="cardsGrid">
 
       <!-- ===== INFO ===== -->
-      <div class="section-card card-star-light" data-category="info">
+      <div class="section-card card-star-light" data-category="info" style="position: relative;">
+        <!-- Глаз в левом верхнем углу карточки -->
+        <div class="eye-container eye-card-left">
+          <div class="eye-box small card-eye" data-eye="infoCard">
+            <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 80 60">
+              <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30"
+                    fill="#000000"
+                    fill-opacity="0" />
+            </svg>
+            <svg class="pupil-mask" viewBox="0 0 80 60">
+              <defs>
+                <clipPath id="eyeClipInfo">
+                  <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30" />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#eyeClipInfo)"></g>
+            </svg>
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;clip-path: url(#eyeClipInfo);">
+              <div class="pupil" data-pupil="infoCard"></div>
+            </div>
+            <div class="eye-outline">
+              <svg viewBox="0 0 80 60">
+                <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30"
+                      fill="none"
+                      stroke="#FDE837"
+                      stroke-width="3"
+                      stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
         <span class="mini-stars">* * *</span>
         <span class="mini-stars">*</span>
         <div class="deco-stars">* *</div>
@@ -1090,7 +1392,37 @@
     <img src="images/bill2.jpg" alt="Bill Cipher" class="hero-img">
 
       <!-- ===== CRITERIA ===== -->
-      <div class="section-card card-edition-create" data-category="criteria">
+      <div class="section-card card-edition-create" data-category="criteria" style="position: relative;">
+        <!-- Глаз в правом нижнем углу -->
+        <div class="eye-container eye-card-right">
+          <div class="eye-box small card-eye" data-eye="criteriaCard">
+            <svg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" viewBox="0 0 80 60">
+              <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30"
+                    fill="#000000"
+                    fill-opacity="0" />
+            </svg>
+            <svg class="pupil-mask" viewBox="0 0 80 60">
+              <defs>
+                <clipPath id="eyeClipCriteria">
+                  <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30" />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#eyeClipCriteria)"></g>
+            </svg>
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;clip-path: url(#eyeClipCriteria);">
+              <div class="pupil" data-pupil="criteriaCard"></div>
+            </div>
+            <div class="eye-outline">
+              <svg viewBox="0 0 80 60">
+                <path d="M 5 30 Q 40 5 75 30 Q 40 55 5 30"
+                      fill="none"
+                      stroke="#FDE837"
+                      stroke-width="3"
+                      stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
         <div class="edition-dot"></div>
         <div class="edition-dot"></div>
         <div class="edition-dot"></div>
@@ -1203,6 +1535,54 @@
 
   <script>
     (function() {
+      // ---------- АНИМАЦИЯ ВСЕХ ГЛАЗ ----------
+      function initEye(eyeBox, pupil) {
+        if (!eyeBox || !pupil) return;
+
+        const maxMove = 12;
+        const isSmall = eyeBox.classList.contains('small');
+        const pupilSize = isSmall ? { w: 12, h: 18 } : { w: 16, h: 22 };
+
+        document.addEventListener('mousemove', (e) => {
+          const rect = eyeBox.getBoundingClientRect();
+          const boxCenterX = rect.left + rect.width / 2;
+          const boxCenterY = rect.top + rect.height / 2;
+
+          const deltaX = e.clientX - boxCenterX;
+          const deltaY = e.clientY - boxCenterY;
+
+          const boxWidth = rect.width;
+          const boxHeight = rect.height;
+
+          const maxAllowedX = (boxWidth / 2) - (pupilSize.w / 2) - 2;
+          const maxAllowedY = (boxHeight / 2) - (pupilSize.h / 2) - 2;
+
+          const safeMaxMoveX = Math.min(maxMove, maxAllowedX);
+          const safeMaxMoveY = Math.min(maxMove, maxAllowedY);
+
+          const relativeX = Math.max(-1, Math.min(1, deltaX / (window.innerWidth / 2)));
+          const relativeY = Math.max(-1, Math.min(1, deltaY / (window.innerHeight / 2)));
+
+          const moveX = relativeX * safeMaxMoveX;
+          const moveY = relativeY * safeMaxMoveY;
+
+          pupil.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+        });
+
+        document.addEventListener('mouseleave', () => {
+          pupil.style.transform = 'translate(-50%, -50%)';
+        });
+      }
+
+      // Инициализируем все глаза
+      const eyeBoxes = document.querySelectorAll('.eye-box');
+      eyeBoxes.forEach(eyeBox => {
+        const pupil = eyeBox.querySelector('.pupil');
+        if (pupil) {
+          initEye(eyeBox, pupil);
+        }
+      });
+
       // ---------- НАВИГАЦИЯ ----------
       const navButtons = document.querySelectorAll('.nav-btn');
       if (navButtons.length) {
@@ -1276,7 +1656,6 @@
         const createEl = cardEdition.querySelector('#editionCreate');
         const hiddenMsg = createEl.querySelector('.hidden-message');
         createEl.addEventListener('mouseenter', function() {
-
           hiddenMsg.style.color = '#FDE837';
           hiddenMsg.style.letterSpacing = '6px';
         });
